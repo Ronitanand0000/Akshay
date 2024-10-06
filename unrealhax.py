@@ -101,7 +101,8 @@ async def attack(update: Update, context: CallbackContext):
         f"*⚔️ Attack Launched! ⚔️*\n"
         f"*🎯 Target: {ip}:{port}*\n"
         f"*🕒 Duration: {duration} seconds*\n"
-        f"*🔥 Enjoy And Kill Whole Lobby  💥*"
+        f"*🔥 Enjoy And Kill Whole Lobby  💥
+        Owner - @RONIT_IN*"
     ), parse_mode='Markdown')
 
     asyncio.create_task(run_attack(chat_id, ip, port, duration, context))
