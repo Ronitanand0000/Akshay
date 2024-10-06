@@ -23,9 +23,9 @@ users = load_users()
 async def start(update: Update, context: CallbackContext):
     chat_id = update.effective_chat.id
     message = (
-        "*🔥 Welcome to the Ronit x Akshay 🔥*\n\n"
+        "*🔥 Welcome to the Ronit BOT 🔥*\n\n"
         "*Use /bgmi <ip> <port> <duration>*\n"
-        "*Let Start Attacking ⚔️💥*\n"
+        "*Let Start Attacking 😛🗣️*\n"
         "* OWNER - @RONIT_IN 😈 *"
     )
     await context.bot.send_message(chat_id=chat_id, text=message, parse_mode='Markdown')
@@ -76,7 +76,7 @@ async def run_attack(chat_id, ip, port, duration, context):
 
     finally:
         attack_in_progress = False
-        await context.bot.send_message(chat_id=chat_id, text="*✅ Attack Completed! ✅*\n*Thank you for using our Ronit x Akshay service!*", parse_mode='Markdown')
+        await context.bot.send_message(chat_id=chat_id, text="*✅ Attack Completed! ✅*\n*Thank you for using @RONIT_IN service! ❤️‍🩹*", parse_mode='Markdown')
 
 async def attack(update: Update, context: CallbackContext):
     global attack_in_progress
@@ -86,15 +86,15 @@ async def attack(update: Update, context: CallbackContext):
     args = context.args
 
     if user_id not in users:
-        await context.bot.send_message(chat_id=chat_id, text="*⚠️ You need to be approved to use this bot. DM - @RONIT_IN*", parse_mode='Markdown')
+        await context.bot.send_message(chat_id=chat_id, text="*⚠❌ You need to be approved to use this bot. DM - @RONIT_IN*", parse_mode='Markdown')
         return
 
     if attack_in_progress:
-        await context.bot.send_message(chat_id=chat_id, text="*⚠️ Another attack is already in progress. Please wait.*", parse_mode='Markdown')
+        await context.bot.send_message(chat_id=chat_id, text="*⚠🤣🫵 Let this attack finish bruhhhh, Chill out 🥶 t*", parse_mode='Markdown')
         return
 
     if len(args) != 3:
-        await context.bot.send_message(chat_id=chat_id, text="*⚠️ Usage: /bgmi <ip> <port> <duration>*", parse_mode='Markdown')
+        await context.bot.send_message(chat_id=chat_id, text="*⚠✅ Usage: /bgmi <ip> <port> <duration>*", parse_mode='Markdown')
         return
 
     ip, port, duration = args
@@ -102,7 +102,7 @@ async def attack(update: Update, context: CallbackContext):
         f"*⚔️ Attack Launched! ⚔️*\n"
         f"*🎯 Target: {ip}:{port}*\n"
         f"*🕒 Duration: {duration} seconds*\n"
-        f"*🔥 Enjoy And Kill Whole Lobby  💥*\n" 
+        f"*🔥 Enjoy And Kill Whole Lobby  😉*\n" 
         f"* Owner - @RONIT_IN *"
     ), parse_mode='Markdown')
 
