@@ -24,8 +24,9 @@ async def start(update: Update, context: CallbackContext):
     chat_id = update.effective_chat.id
     message = (
         "*🔥 Welcome to the Ronit x Akshay 🔥*\n\n"
-        "*Use /attack <ip> <port> <duration>*\n"
-        "*Let Start Attacking ⚔️💥*"
+        "*Use /bgmi <ip> <port> <duration>*\n"
+        "*Let Start Attacking ⚔️💥*\n"
+        "* OWNER - @RONIT_IN 😈 *"
     )
     await context.bot.send_message(chat_id=chat_id, text=message, parse_mode='Markdown')
 
@@ -93,7 +94,7 @@ async def attack(update: Update, context: CallbackContext):
         return
 
     if len(args) != 3:
-        await context.bot.send_message(chat_id=chat_id, text="*⚠️ Usage: /attack <ip> <port> <duration>*", parse_mode='Markdown')
+        await context.bot.send_message(chat_id=chat_id, text="*⚠️ Usage: /bgmi <ip> <port> <duration>*", parse_mode='Markdown')
         return
 
     ip, port, duration = args
@@ -111,7 +112,7 @@ def main():
     application = Application.builder().token(TELEGRAM_BOT_TOKEN).build()
     application.add_handler(CommandHandler("start", start))
     application.add_handler(CommandHandler("manage", manage))
-    application.add_handler(CommandHandler("attack", attack))
+    application.add_handler(CommandHandler("bgmi", attack))
     application.run_polling()
 
 if __name__ == '__main__':
