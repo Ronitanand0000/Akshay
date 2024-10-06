@@ -3,7 +3,7 @@ from telegram import Update
 from telegram.ext import Application, CommandHandler, CallbackContext
 
 TELEGRAM_BOT_TOKEN = '7728932408:AAGMbi9wuCfZJ4LlefAVRU46XGxsR7VTbhM'
-ADMIN_USER_ID = 7246521618, 788815555
+ADMIN_USER_ID = 7246521618
 USERS_FILE = 'users.txt'
 attack_in_progress = False
 
@@ -101,7 +101,8 @@ async def attack(update: Update, context: CallbackContext):
         f"*⚔️ Attack Launched! ⚔️*\n"
         f"*🎯 Target: {ip}:{port}*\n"
         f"*🕒 Duration: {duration} seconds*\n"
-        f"*🔥 Enjoy And Kill Whole Lobby  💥 Owner - @RONIT_IN 💥*"
+        f"*🔥 Enjoy And Kill Whole Lobby  💥*\n" 
+        f"* Owner - @RONIT_IN *"
     ), parse_mode='Markdown')
 
     asyncio.create_task(run_attack(chat_id, ip, port, duration, context))
