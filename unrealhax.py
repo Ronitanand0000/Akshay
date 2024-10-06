@@ -2,8 +2,8 @@ import asyncio
 from telegram import Update
 from telegram.ext import Application, CommandHandler, CallbackContext
 
-TELEGRAM_BOT_TOKEN = '7971151436:AAFss6HDs347ixIwFl8rijcHFSGXVy2oQ0k'
-ADMIN_USER_ID = 7252677891
+TELEGRAM_BOT_TOKEN = '7728932408:AAGMbi9wuCfZJ4LlefAVRU46XGxsR7VTbhM'
+ADMIN_USER_ID = 7246521618, 788815555
 USERS_FILE = 'users.txt'
 attack_in_progress = False
 
@@ -23,9 +23,9 @@ users = load_users()
 async def start(update: Update, context: CallbackContext):
     chat_id = update.effective_chat.id
     message = (
-        "*🔥 Welcome to the UnRealHax 🔥*\n\n"
+        "*🔥 Welcome to the Ronit x Akshay 🔥*\n\n"
         "*Use /attack <ip> <port> <duration>*\n"
-        "*Let Start Fucking ⚔️💥*"
+        "*Let Start Attacking ⚔️💥*"
     )
     await context.bot.send_message(chat_id=chat_id, text=message, parse_mode='Markdown')
 
@@ -75,7 +75,7 @@ async def run_attack(chat_id, ip, port, duration, context):
 
     finally:
         attack_in_progress = False
-        await context.bot.send_message(chat_id=chat_id, text="*✅ Attack Completed! ✅*\n*Thank you for using our UnRealHax service!*", parse_mode='Markdown')
+        await context.bot.send_message(chat_id=chat_id, text="*✅ Attack Completed! ✅*\n*Thank you for using our Ronit x Akshay service!*", parse_mode='Markdown')
 
 async def attack(update: Update, context: CallbackContext):
     global attack_in_progress
@@ -85,7 +85,7 @@ async def attack(update: Update, context: CallbackContext):
     args = context.args
 
     if user_id not in users:
-        await context.bot.send_message(chat_id=chat_id, text="*⚠️ You need to be approved to use this bot.*", parse_mode='Markdown')
+        await context.bot.send_message(chat_id=chat_id, text="*⚠️ You need to be approved to use this bot. DM - @RONIT_IN*", parse_mode='Markdown')
         return
 
     if attack_in_progress:
@@ -101,7 +101,7 @@ async def attack(update: Update, context: CallbackContext):
         f"*⚔️ Attack Launched! ⚔️*\n"
         f"*🎯 Target: {ip}:{port}*\n"
         f"*🕒 Duration: {duration} seconds*\n"
-        f"*🔥 Enjoy And Fuck Whole Lobby  💥*"
+        f"*🔥 Enjoy And Kill Whole Lobby  💥*"
     ), parse_mode='Markdown')
 
     asyncio.create_task(run_attack(chat_id, ip, port, duration, context))
