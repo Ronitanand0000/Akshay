@@ -117,3 +117,11 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+@bot.message_handler(commands=['myinfo'])
+def get_user_info(message):
+    user_id = str(message.chat.id)
+    user_info = bot.get_chat(user_id)
+    username = user_info.username if user_info.username else "N/A"
+    response = f"👤 Your Info:\n\n🆔 User ID: <code>{user_id}</code>\n📝 Username: {username}\n
+    bot.reply_to(message, response, parse_mode="HTML")
