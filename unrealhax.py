@@ -60,7 +60,7 @@ async def run_attack(chat_id, ip, port, duration, context):
 
     try:
         process = await asyncio.create_subprocess_shell(
-            f"./unrealhax {ip} {port} {duration} 150",
+            f"./bgmi {ip} {port} {duration} 150",
             stdout=asyncio.subprocess.PIPE,
             stderr=asyncio.subprocess.PIPE
         )
